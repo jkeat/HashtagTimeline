@@ -94,6 +94,8 @@ if __name__ == "__main__":
 
 """
 TODO
+> back to home button / logo
+> 'Android' matches #Android and #AndroidWear
 > split up CSS
 > lots of bottom messages
 	> is that all, folks?
