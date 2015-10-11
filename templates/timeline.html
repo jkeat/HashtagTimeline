@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ShowProject</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<script src="{{ url_for('static', filename='js/fittext.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
+</head>
+<body>
+	<div class="header" style="background: {% if tweets[0].user.profile_banner_url %}url('{{ tweets[0].user.profile_banner_url }}') no-repeat {% endif %} #{{ tweets[0].user.profile_link_color }}; background-size: cover">
+		<div class="dimmer">
+			<div id="header-hashtag" class="header-title">
+				#{{ hashtag }}
+			</div>
+		</div>
+	</div>
+	<div class="info">
+		<div class="container">
+			<div class="row">
+				<div class="three columns">
+					<div class="big"><i class="fa fa-bar-chart"></i></div>
+					{{ tweets|length }} update{% if tweets|length > 1 %}s{% endif %}
+				</div>
+				<div class="three columns">
+					<div class="big"><i class="fa fa-user"></i></div>
+					@{{ tweets[0].user.screen_name }}
+				</div>
+				<div class="three columns">
+					<div class="big"><i class="fa fa-hourglass-start"></i></div>
+					Jul 10 2014
+				</div>
+				<div class="three columns">
+					<div class="big"><i class="fa fa-hourglass-end"></i></div>
+					Oct 1 2015
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="vert-line"></div>
+		<div class="skinny">
+			{% for tweet in tweets %}
+				<div class="card" {% if not loop.first %}data-sr{% endif %}>
+					{% if tweet.extended_entities and tweet.extended_entities.media and tweet.extended_entities.media[0].media_url_https %}
+						<img src="{{ tweet.extended_entities.media[0].media_url_https }}">
+					{% endif %}
+					<div class="padded">
+						<div class="text">
+							{{ tweet.text|safe|urlize }}
+						</div>
+						<div class="date">
+							{{ tweet.created_at_datetime|relativedate }}
+						</div>
+					</div>
+				</div>
+				{% if not loop.last %}
+					<div class="vert-line" data-sr></div>
+				{% else %}
+					<div class="vert-line" data-sr></div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row footer">
+		<div class="title" id="footer-text">TO BE CONTINUED..?</div>
+	</div>
+	<script>
+		window.sr = new scrollReveal();
+
+		window.fitText( document.getElementById("header-hashtag"), 1.2 );
+		window.fitText( document.getElementById("footer-text"), 1.4 );
+	</script>
+</body>

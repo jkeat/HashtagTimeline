@@ -1,0 +1,150 @@
+body {
+	background: #f2f2f2;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header {
+	height: 300px;
+	width: 100%;
+	color: #fff;
+	background-color: #F0F;
+}
+@media (max-width: 550px) {
+	.header {
+		height: 150px;
+	}
+}
+.header-title {
+	width: calc(100% - 20px);
+	overflow-x: scroll;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+.info {
+	background-color: #fff;
+}
+.info .columns {
+	margin-bottom: 28px;
+	text-align: center;
+}
+@media (max-width: 550px) {
+	.info .columns:not(:last-of-type) {
+		margin-bottom: 0;
+	}
+}
+.info .columns .big {
+	font-size: 4rem;
+	margin: 18px auto 0;
+}
+
+.dimmer {
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,.5);
+}
+
+.skinny {
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vert-line {
+	width: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border-right: solid #dadada 2px;
+	height: 75px;
+}
+
+.card {
+	background: #fff;
+}
+.card img {
+	width: 100%;
+}
+.card .padded {
+	padding: 30px;
+}
+.card .text {
+	font-size: 2.7rem;
+}
+.card .date {
+	margin-top: 10px;
+}
+
+
+.description {
+	margin: 50px 0 30px;
+    text-align: center;
+    font-size: 3rem;
+}
+@media (max-width: 550px) {
+	.description {
+		font-size: 1.6rem;
+		margin: 30px 0 5px;
+	}
+}
+
+.search .component {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100px;
+}
+.search form {
+	margin: 0;
+}
+.search label {
+	display: inline-block;
+	margin-bottom: 0;
+	font-size: 40px;
+	font-weight: normal;
+}
+.search input:focus {
+	outline: none;
+}
+.search input[type="text"] {
+	height: auto;
+	width: calc(100% - 60px);
+	margin-bottom: 0;
+    background: transparent;
+    border: none;
+    border-bottom: solid #000 1px;
+    border-radius: 0;
+    font-size: 50px;
+}
+.search input[type="submit"] {
+	margin: 0;
+	height: 50%;
+	font-size: 1.5rem;
+	float: right;
+	width: 100%;
+	margin-top: 25px;
+}
+
+.row.footer {
+	color: #000;
+}
+.footer .title {
+	width: calc(100% - 100px);
+	margin: 0 auto 80px;
+	text-align: center;
+}
+@media (max-width: 550px) {
+	.footer .title {
+		margin-top: 30px;
+		margin-bottom: 60px;
+	}
+}

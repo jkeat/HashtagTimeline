@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ShowProject | No results</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<script src="{{ url_for('static', filename='js/fittext.js') }}"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="dimmer">
+			<div id="header-no-results" class="header-title">
+				NO RESULTS
+			</div>
+		</div>
+	</div>
+	<script>
+		window.fitText( document.getElementById("header-no-results"), 0.9 );
+	</script>
+</body>

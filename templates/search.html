@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ShowProject</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<script src="{{ url_for('static', filename='js/fittext.js') }}"></script>
+	<style>
+		.header {
+			background-color: #55ACEE;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div id="site-title" class="header-title">
+			ShowProject
+		</div>
+	</div>
+	<div class="container">
+		<div class="description row">
+			A timeline of a project updates via Twitter
+		</div>
+		<div class="search row">
+			<form id="search-form">
+				<div class="five columns">
+					<div class="component">
+					    <label for='username'>@</label>
+					    <input type='text' id='username' />
+					</div>
+				</div>
+				<div class="five columns">
+					<div class="component">
+					    <label for='hashtag'>#</label>
+					    <input type='text' id='hashtag' />
+					</div>
+				</div>
+				<div class="two columns">
+					<input type="submit" class="fa fa-2x" value="&#xf061;" />
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		window.fitText( document.getElementById("site-title"), 0.8 );
+
+		document.getElementById("search-form").addEventListener('submit', function(e) {
+			username = document.getElementById("username").value;
+			hashtag = document.getElementById("hashtag").value;
+			redirect_url = "/" + username + "/" + hashtag;
+			console.log(redirect_url)
+			e.preventDefault();
+			window.location.replace(redirect_url);
+		}, false);
+	</script>
+</body>
