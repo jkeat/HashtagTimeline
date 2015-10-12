@@ -21,15 +21,12 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="center medium row spaced">
-			Timeline of project updates via Twitter
-		</div>
 		<div class="search row">
 			<form id="search-form">
 				<div class="five columns">
 					<div class="component">
 					    <label for='username'>@</label>
-					    <input type='text' id='username' />
+					    <input type='text' id='username' autofocus />
 					</div>
 				</div>
 				<div class="five columns">
@@ -39,27 +36,38 @@
 					</div>
 				</div>
 				<div class="two columns">
-					<input type="submit" class="fa fa-2x" value="&#xf061;" />
+					<input type="submit" class="fa" value="&#xf002;" />
 				</div>
 			</form>
 		</div>
-		<div class="skinny medium row spaced">
-			<div class="center">try:</div>
-			<ul>
-				<li>@MarsCuriosity #JourneyToMars</li>
-				<li>@Linux #Ubuntu</li>
+		<div class="center medium row spaced">
+			Timeline of project updates via Twitter
+		</div>
+		<div class="skinny small row spaced">
+			<div class="center">Try these:</div>
+			<ul class="horizontal-list">
+				<li><a href="/MarsCuriosity/JourneyToMars">@MarsCuriosity #JourneyToMars</a></li>
+				<li><a href="/Linux/Ubuntu">@Linux #Ubuntu</a></li>
+				<li><a href="/Cubs/FlyTheW">@Cubs #FlyTheW</a></li>
+				<li><a href="/ycombinator/HackTheNorth">@ycombinator #HackTheNorth</a></li>
 			</ul>
 		</div>
 	</div>
+
+	<!-- GitHub ribbon -->
+	<a href="https://github.com/jkeat/fowltale"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
 	<script>
 		window.fitText( document.getElementById("site-title"), 0.8 );
 
 		document.getElementById("search-form").addEventListener('submit', function(e) {
+			e.preventDefault();
 			username = document.getElementById("username").value;
 			hashtag = document.getElementById("hashtag").value;
+			if (!username || !hashtag) {
+				return;
+			}
 			redirect_url = "/" + username + "/" + hashtag;
-			console.log(redirect_url)
-			e.preventDefault();
 			window.location.assign(redirect_url);
 		}, false);
 	</script>
