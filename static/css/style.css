@@ -13,6 +13,15 @@ img {
 .spaced {
 	margin: 50px 0 30px;
 }
+.horizontal-list {
+	display: inline-flex;
+	list-style: none;
+	width: 100%;
+	flex-wrap: wrap;
+}
+.horizontal-list li:not(:last-of-type)::after {
+	content: ",\00a0\00a0";
+}
 
 .header {
 	height: 300px;
@@ -39,7 +48,7 @@ img {
 	background-color: #fff;
 }
 .info .columns {
-	margin-bottom: 28px;
+	margin-bottom: 20px;
 	text-align: center;
 }
 .info .columns .big {
@@ -114,6 +123,12 @@ img {
 	}
 }
 
+.search {
+	background-color: #fff;
+	padding: 5px 20px;
+	margin: 20px 0 0;
+	border-radius: 6px;
+}
 .search .component {
     display: table-cell;
     vertical-align: middle;
@@ -137,17 +152,23 @@ img {
 	margin-bottom: 0;
     background: transparent;
     border: none;
-    border-bottom: solid #000 1px;
+    border-bottom: none;
     border-radius: 0;
     font-size: 50px;
 }
 .search input[type="submit"] {
-	margin: 0;
-	height: 50%;
-	font-size: 1.5rem;
+	margin: 10px 0 15px;
+	height: 51px;
+	font-size: 2.5rem;
 	float: right;
 	width: 100%;
-	margin-top: 25px;
+}
+@media (min-width: 550px) {
+	.search input[type="submit"] {
+		margin-top: 0;
+		transform: translateY(50%);
+		border: none;
+	}
 }
 
 .row.footer {
