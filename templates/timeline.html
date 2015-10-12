@@ -31,11 +31,11 @@
 				</div>
 				<div class="three columns">
 					<div class="big"><i class="fa fa-hourglass-start"></i></div>
-					Jul 10 2014
+					{{ tweets[-1].created_at_datetime|prettydate }}
 				</div>
 				<div class="three columns">
 					<div class="big"><i class="fa fa-hourglass-end"></i></div>
-					Oct 1 2015
+					{{ tweets[0].created_at_datetime|prettydate }}
 				</div>
 			</div>
 		</div>

@@ -85,7 +85,12 @@ def relativedate(time=False):
     return str(day_diff / 365) + " years ago"
 
 app.jinja_env.filters['relativedate'] = relativedate
-    
+
+@app.template_filter()
+def prettydate(d):
+	return d.strftime("%b %-d, %Y")
+
+app.jinja_env.filters['prettydate'] = prettydate
 
 
 if __name__ == "__main__":
@@ -94,6 +99,8 @@ if __name__ == "__main__":
 
 """
 TODO
+> link to twitter profile
+    > link to each tweet?
 > back to home button / logo
 > 'Android' matches #Android and #AndroidWear
 > split up CSS

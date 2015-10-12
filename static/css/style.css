@@ -6,9 +6,12 @@ img {
 	max-width: 100%;
 	max-height: 100%;
 }
+
 .center {
-	margin-left: auto;
-	margin-right: auto;
+	text-align: center;
+}
+.spaced {
+	margin: 50px 0 30px;
 }
 
 .header {
@@ -39,14 +42,23 @@ img {
 	margin-bottom: 28px;
 	text-align: center;
 }
+.info .columns .big {
+	font-size: 4rem;
+	margin: 18px auto 0;
+}
 @media (max-width: 550px) {
 	.info .columns:not(:last-of-type) {
 		margin-bottom: 0;
 	}
-}
-.info .columns .big {
-	font-size: 4rem;
-	margin: 18px auto 0;
+	.info .three.columns {
+	    width: 50%;
+	}
+	.info .three.columns .big {
+	    width: 50%;
+	}
+	.info .columns .big {
+		font-size: 3rem;
+	}
 }
 
 .dimmer {
@@ -80,15 +92,19 @@ img {
 }
 .card .text {
 	font-size: 2.7rem;
+	overflow-x: hidden;
 }
 .card .date {
 	margin-top: 10px;
 }
+@media (max-width: 550px) {
+	.card .padded {
+		padding: 20px;
+	}
+}
 
 
-.description {
-	margin: 50px 0 30px;
-    text-align: center;
+.medium {
     font-size: 3rem;
 }
 @media (max-width: 550px) {
