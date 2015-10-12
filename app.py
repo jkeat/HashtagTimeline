@@ -99,9 +99,11 @@ if __name__ == "__main__":
 
 """
 TODO
+> javascript horizontal timeline at top?
 > link to twitter profile
     > link to each tweet?
 > back to home button / logo
+    > search bar at the top?
 > 'Android' matches #Android and #AndroidWear
 > split up CSS
 > lots of bottom messages
@@ -114,7 +116,6 @@ TODO
 	> ?
 > get correct capitalization by looking @ first tweet
 > 404 page
-> start/end dates
 > get ALL tweets, not just 200 
 	> loop, get id of last one, start there if there are more
 """
