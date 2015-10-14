@@ -11,7 +11,7 @@ img {
 	text-align: center;
 }
 .spaced {
-	margin: 50px 0 30px;
+	margin: 40px 0 0;
 }
 .horizontal-list {
 	display: inline-flex;
@@ -23,11 +23,12 @@ img {
 	content: ",\00a0\00a0";
 }
 
+/* HEADER */
 .header {
 	height: 300px;
 	width: 100%;
 	color: #fff;
-	background-color: #F0F;
+	background-color: #000;
 }
 @media (max-width: 550px) {
 	.header {
@@ -43,6 +44,7 @@ img {
 	transform: translateY(-50%);
 	text-align: center;
 }
+/* /HEADER */
 
 .info {
 	background-color: #fff;
@@ -113,9 +115,27 @@ img {
 }
 
 
+.small {
+    font-size: 1.5rem;
+}
 .medium {
     font-size: 3rem;
 }
+
+.blue {
+	background-color: #55ACEE;
+}
+.orange {
+	background-color: #FF8250;
+}
+.purple {
+	background-color: #6464F1;
+}
+.yellow {
+	background-color: #FFD350;
+}
+
+
 @media (max-width: 550px) {
 	.description {
 		font-size: 1.6rem;
@@ -123,30 +143,30 @@ img {
 	}
 }
 
-.search {
+.search-bar {
 	background-color: #fff;
 	padding: 5px 20px;
 	margin: 20px 0 0;
 	border-radius: 6px;
 }
-.search .component {
+.search-bar .component {
     display: table-cell;
     vertical-align: middle;
     height: 100px;
 }
-.search form {
+.search-bar form {
 	margin: 0;
 }
-.search label {
+.search-bar label {
 	display: inline-block;
 	margin-bottom: 0;
 	font-size: 40px;
 	font-weight: normal;
 }
-.search input:focus {
+.search-bar input:focus {
 	outline: none;
 }
-.search input[type="text"] {
+.search-bar input[type="text"] {
 	height: auto;
 	width: calc(100% - 60px);
 	margin-bottom: 0;
@@ -156,7 +176,7 @@ img {
     border-radius: 0;
     font-size: 50px;
 }
-.search input[type="submit"] {
+.search-bar input[type="submit"] {
 	margin: 10px 0 15px;
 	height: 51px;
 	font-size: 2.5rem;
@@ -164,7 +184,7 @@ img {
 	width: 100%;
 }
 @media (min-width: 550px) {
-	.search input[type="submit"] {
+	.search-bar input[type="submit"] {
 		margin-top: 0;
 		transform: translateY(50%);
 		border: none;

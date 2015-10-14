@@ -5,6 +5,7 @@ from TwitterAPI import TwitterAPI
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def search():
     return render_template("search.html")
@@ -32,7 +33,7 @@ def timeline(username, hashtag):
     except:
         return render_template("no-results.html")
     if not tweet_matches:
-        return render_template("no-results.html")
+        return render_template("no-results.html", search_username=username, search_hashtag=hashtag)
     return render_template("timeline.html", tweets=tweet_matches, hashtag=hashtag)
 
 
@@ -97,20 +98,28 @@ def prettydate(d):
 app.jinja_env.filters['prettydate'] = prettydate
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('errors/404.html'), 404
+
+
 if __name__ == "__main__":
     app.run(debug=os.environ['DEBUG'])
 
 
 """
 TODO
+> name
+> fonts
+> README
+    > explain twitter limitations
 > show that the beginnning is the beginning
-> if API limit exceeded
+> if API limit exceeded?
 > javascript horizontal timeline at top?
 > link to twitter profile
     > link to each tweet?
 > back to home button / logo
     > search bar at the top?
-> split up CSS
 > lots of bottom messages
     > is that all, folks?
     > to be continued
@@ -120,7 +129,4 @@ TODO
     > you are here
     > ?
 > get correct capitalization by looking @ first tweet
-> 404 page
-> get ALL tweets, not just 200 
-    > loop, get id of last one, start there if there are more
 """
