@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Projecty | No results</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/skeleton.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}">
+	<script src="{{ url_for('static', filename='js/fittext.js') }}"></script>
+</head>
+<body>
+	<div class="header yellow">
+		<div id="header-no-results" class="header-title">
+			4 0 4
+		</div>
+	</div>
+	<div class="container">
+		{% include 'components/search-bar.html' %}
+	</div>
+	<script>
+		window.fitText( document.getElementById("header-no-results"), 0.9 );
+	</script>
+</body>
