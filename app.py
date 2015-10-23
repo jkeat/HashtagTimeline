@@ -31,10 +31,10 @@ def timeline(username, hashtag):
                 tweet['created_at_datetime'] = datetime.datetime.strptime(tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y')
                 tweet_matches = [tweet] + tweet_matches
     except:
-        return render_template("no-results.html")
+        return render_template("no-results.html", username=username, hashtag=hashtag)
     if not tweet_matches:
-        return render_template("no-results.html", search_username=username, search_hashtag=hashtag)
-    return render_template("timeline.html", tweets=tweet_matches, hashtag=hashtag)
+        return render_template("no-results.html", username=username, hashtag=hashtag)
+    return render_template("timeline.html", tweets=tweet_matches, hashtag=hashtag, username=username)
 
 
 @app.template_filter()
@@ -109,24 +109,10 @@ if __name__ == "__main__":
 
 """
 TODO
-> name
-> fonts
 > README
     > explain twitter limitations
-> show that the beginnning is the beginning
 > if API limit exceeded?
-> javascript horizontal timeline at top?
 > link to twitter profile
     > link to each tweet?
-> back to home button / logo
-    > search bar at the top?
-> lots of bottom messages
-    > is that all, folks?
-    > to be continued
-    > this is the end
-    > that's all, folks!
-    > now what?
-    > you are here
-    > ?
 > get correct capitalization by looking @ first tweet
 """
