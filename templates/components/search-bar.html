@@ -3,13 +3,13 @@
 		<div class="five columns">
 			<div class="component">
 			    <label for='username'>@</label>
-			    <input type='text' id='username' autofocus {% if search_username is not none %}value="{{ search_username }}"{% endif %}  />
+			    <input type='text' id='username' autofocus {% if username is not none %}value="{{ username }}"{% endif %}  />
 			</div>
 		</div>
 		<div class="five columns">
 			<div class="component">
 			    <label for='hashtag'>#</label>
-			    <input type='text' id='hashtag' {% if search_username is not none %}value="{{ search_hashtag }}"{% endif %} />
+			    <input type='text' id='hashtag' {% if hashtag is not none %}value="{{ hashtag }}"{% endif %} />
 			</div>
 		</div>
 		<div class="two columns">

@@ -11,8 +11,11 @@
 	<script src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
 </head>
 <body>
-	<div class="header" style="background: {% if tweets[0].user.profile_banner_url %}url('{{ tweets[0].user.profile_banner_url }}') no-repeat {% endif %} #{{ tweets[0].user.profile_link_color }}; background-size: cover">
-		<div class="dimmer">
+	<div id="search-top" style="display:none">{% include 'components/search-bar.html' %}</div>
+	<div class="header" style="position: relative; background: {% if tweets[0].user.profile_banner_url %}url('{{ tweets[0].user.profile_banner_url }}') no-repeat {% endif %} #{{ tweets[0].user.profile_link_color }}; background-size: cover">
+		<a id="banner-home-button" href="/" class="banner-button banner-button-left"><i class="fa fa-home"></i></a>
+		<i id="banner-search-trigger" class="banner-button banner-button-right fa fa-search"></i>
+		<div class="dimmer" {% if not tweets[0].user.profile_banner_url %}style="background: rgba(0,0,0,.1)"{% endif %}>
 			<div id="header-hashtag" class="header-title">
 				#{{ hashtag }}
 			</div>
@@ -66,12 +69,18 @@
 		</div>
 	</div>
 	<div class="row footer">
-		<div class="title" id="footer-text">TO BE CONTINUED..?</div>
+		<div class="footer-title" id="footer-text">TO BE CONTINUED..?</div>
 	</div>
 	<script>
 		window.sr = new scrollReveal();
 
 		window.fitText( document.getElementById("header-hashtag"), 1.2 );
 		window.fitText( document.getElementById("footer-text"), 1.4 );
+
+		document.getElementById("banner-search-trigger").onclick = function() {
+			document.getElementById("banner-search-trigger").style.display = "none";
+			document.getElementById("search-top").style.display = "block";
+			document.getElementById("username").focus();
+		}
 	</script>
 </body>

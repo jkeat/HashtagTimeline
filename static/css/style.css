@@ -7,11 +7,30 @@ img {
 	max-height: 100%;
 }
 
+/* MISC */
+.small {
+    font-size: 1.5rem;
+}
+.medium {
+    font-size: 3rem;
+}
+.blue {
+	background-color: #55ACEE;
+}
+.orange {
+	background-color: #FF8250;
+}
+.purple {
+	background-color: #6464F1;
+}
+.yellow {
+	background-color: #FFD350;
+}
 .center {
 	text-align: center;
 }
 .spaced {
-	margin: 40px 0 0;
+	margin-top: 40px;
 }
 .horizontal-list {
 	display: inline-flex;
@@ -22,13 +41,23 @@ img {
 .horizontal-list li:not(:last-of-type)::after {
 	content: ",\00a0\00a0";
 }
+.dimmer {
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,.5);
+}
+.skinny {
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* END MISC */
 
 /* HEADER */
 .header {
 	height: 300px;
 	width: 100%;
 	color: #fff;
-	background-color: #000;
 }
 @media (max-width: 550px) {
 	.header {
@@ -44,109 +73,13 @@ img {
 	transform: translateY(-50%);
 	text-align: center;
 }
-/* /HEADER */
-
-.info {
-	background-color: #fff;
-}
-.info .columns {
-	margin-bottom: 20px;
-	text-align: center;
-}
-.info .columns .big {
-	font-size: 4rem;
-	margin: 18px auto 0;
-}
-@media (max-width: 550px) {
-	.info .columns:not(:last-of-type) {
-		margin-bottom: 0;
-	}
-	.info .three.columns {
-	    width: 50%;
-	}
-	.info .three.columns .big {
-	    width: 50%;
-	}
-	.info .columns .big {
-		font-size: 3rem;
-	}
-}
-
-.dimmer {
-	height: 100%;
-	width: 100%;
-	background: rgba(0,0,0,.5);
-}
-
-.skinny {
-	max-width: 600px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.vert-line {
-	width: 0px;
-	margin-left: auto;
-	margin-right: auto;
-	border-right: solid #dadada 2px;
-	height: 75px;
-}
-
-.card {
-	background: #fff;
-}
-.card img {
-	width: 100%;
-}
-.card .padded {
-	padding: 30px;
-}
-.card .text {
-	font-size: 2.7rem;
-	overflow-x: hidden;
-}
-.card .date {
-	margin-top: 10px;
-}
-@media (max-width: 550px) {
-	.card .padded {
-		padding: 20px;
-	}
-}
+/* END HEADER */
 
 
-.small {
-    font-size: 1.5rem;
-}
-.medium {
-    font-size: 3rem;
-}
-
-.blue {
-	background-color: #55ACEE;
-}
-.orange {
-	background-color: #FF8250;
-}
-.purple {
-	background-color: #6464F1;
-}
-.yellow {
-	background-color: #FFD350;
-}
-
-
-@media (max-width: 550px) {
-	.description {
-		font-size: 1.6rem;
-		margin: 30px 0 5px;
-	}
-}
-
+/* SEARCH BAR */
 .search-bar {
 	background-color: #fff;
 	padding: 5px 20px;
-	margin: 20px 0 0;
 	border-radius: 6px;
 }
 .search-bar .component {
@@ -190,18 +123,116 @@ img {
 		border: none;
 	}
 }
+/* END SEARCH BAR */
 
-.row.footer {
+
+/********************************************************/
+/****************** SEARCH RESULT PAGE ******************/
+
+/* TIMELINE */
+.card {  /* (each tweet is contained in a card) */
+	background: #fff;
+}
+.card img {
+	width: 100%;
+}
+.card .padded {
+	padding: 30px;
+}
+.card .text {
+	font-size: 2.7rem;
+	overflow-x: hidden;
+}
+.card .date {
+	margin-top: 10px;
+}
+@media (max-width: 550px) {
+	.card .padded {
+		padding: 20px;
+	}
+}
+.vert-line {  /* connects cards to give timeline look */
+	width: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	border-right: solid #dadada 2px;
+	height: 75px;
+}
+.footer {  /* the big text at the bottom */
 	color: #000;
 }
-.footer .title {
+.footer .footer-title {
 	width: calc(100% - 100px);
 	margin: 0 auto 80px;
 	text-align: center;
 }
 @media (max-width: 550px) {
-	.footer .title {
+	.footer .footer-title {
 		margin-top: 30px;
 		margin-bottom: 60px;
 	}
 }
+/* END TIMELINE */
+
+/* INFO (used for statistics display in timeline result) */
+.info {
+	background-color: #fff;
+}
+.info .columns {
+	margin-bottom: 20px;
+	text-align: center;
+}
+.info .columns .big {  /* probably an icon or symbol */
+	font-size: 4rem;
+	margin: 18px auto 0;
+}
+@media (max-width: 550px) {
+	.info .columns:not(:last-of-type) {
+		margin-bottom: 0;
+	}
+	.info .three.columns {
+	    width: 50%;
+	}
+	.info .three.columns .big {
+	    width: 50%;
+	}
+	.info .columns .big {
+		font-size: 3rem;
+	}
+}
+/* END INFO */
+
+/* TIMELINE BANNER BUTTONS */
+.banner-button {
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	font-size: 2em;
+	color: #fff;
+	line-height: normal;
+}
+.banner-button:hover {
+	color: #fff;
+}
+.banner-button-left {
+	left: 40px;
+}
+.banner-button-right {
+	right: 40px;
+}
+@media (max-width: 550px) {
+	.banner-button {
+		top: 20px;
+		font-size: 1.5em;
+	}
+	.banner-button-left {
+		left: 20px;
+	}
+	.banner-button-right {
+		right: 20px;
+	}
+}
+/* END TIMELINE BANNER BUTTONS */
+
+/**************** END SEARCH RESULT PAGE ****************/
+/********************************************************/
